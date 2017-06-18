@@ -1,0 +1,30 @@
+<% provide(:title, "Edit user") %>
+<h1>Update your profile</h1>
+
+<div class="row">
+  <div class="col-md-6 col-md-offset-3">
+    <%= form_for(@user) do |f| %>
+
+      <%= f.label :email %>
+      <%= f.email_field :email, class: 'form-control' %>
+      <%= f.label :password %>
+      <%= f.email_field :password, class: 'form-control' %>
+      <%= f.label :password_confirmation %>
+      <%= f.email_field :password_confirmation, class: 'form-control' %>
+      <%= f.label :roles, "Roles" %>
+      <p>
+        <% Role.all.each do |role| %>
+          <%= label "role", :name, role.name %>
+          <%= check_box("role", "id", {:multiple => true, checked: @user.roles.collect(&:name).include?(role.name)}, role.id, nil) %>
+        <% end %>
+      </p>
+      
+      </br>
+
+      <%= f.submit "Save changes", class: "btn btn-primary" %>
+    <% end %>
+
+      
+    </div>
+  </div>
+</div>

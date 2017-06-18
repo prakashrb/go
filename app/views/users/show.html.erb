@@ -1,0 +1,16 @@
+
+
+<div class="container">
+  <h2>Basic List Group</h2>
+  <ul class="list-group ">
+    <li class="list-group-item">EMAIL: <%= @user.email%></li>
+    <li class="list-group-item">ROLES: <% @user.roles.each do |r| %></li>
+    <li class="list-group-item"><%= r.name%></li>
+    <% end %>
+  </ul>
+</div>
+
+</body>
+</html>
+
+

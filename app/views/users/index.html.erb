@@ -1,0 +1,32 @@
+
+
+	<div class="container">
+	  <h2> Users </h2>
+	  <p> List of Users </p>
+	  <table class="table">
+	    <thead>
+	      <tr>
+	        <th>id</th>
+	        <th>email</th>
+	        <th>created_at</th>
+	      </tr>
+	    </thead>
+	    <tbody>
+	      <% @users.each do |user| %>
+	      <tr> 
+	       <td><%= user.id%> </td>
+	       <td><%= user.email %> </td>
+	       <td><%=  user.created_at %> </td>
+	       <td><%=  link_to 'Show', user%> </td>
+	       <td><%= link_to 'Edit', edit_user_path(user) %> </td>
+	       <td><%#= link_to 'Destroy', user, method: :delete, data: { confirm : 'Are you sure ?'}, :remote => true, :class => 'delete_user' %> </td>
+
+	      </tr>
+	      <% end %>
+	    </tbody>
+	  </table>
+	     <%= link_to "Log Out", destroy_user_session_path, method: :delete %> 
+
+	</div>
+
+
