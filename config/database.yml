@@ -48,7 +48,10 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-  database: gocanvas_production
-  username: gocanvas
-  password: <%= ENV['GOCANVAS_DATABASE_PASSWORD'] %>
+ adapter: mysql2
+ encoding: utf8
+ database: prod
+ username: prakash
+ password: production
+ host: prod.cdy784knjaxu.us-east-1.rds.amazonaws.com
+ port: 3306
