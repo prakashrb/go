@@ -62,6 +62,25 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "gocanvas_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
+  config.action_mailer.raise_delivery_errors = true
+
+
+  config.action_mailer.default_url_options = { :host => 'http://34.204.15.151/' } 
+
+  config.action_mailer.delivery_method = :smtp
+
+
+  config.action_mailer.perform_deliveries = true
+
+   config.action_mailer.smtp_settings = {
+     :address              => "smtp.gmail.com",
+     :port                 => 587,
+     :domain               => 'domain.com',
+     :user_name            => 'testdem119@gmail.com',
+     :password             => 'testdem9',
+     :authentication       => :plain,
+     :enable_starttls_auto => true  }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false
